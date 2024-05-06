@@ -44,7 +44,12 @@
 // require('dotenv').config();
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const privateKey = ["8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63"];
+const provider = new HDWalletProvider(
+    privateKey,
+    "http://127.0.0.1:8545",
+);
 
 module.exports = {
   /**
@@ -58,6 +63,10 @@ module.exports = {
    */
 
   networks: {
+    besuWallet: {
+        provider: () => provider,
+        network_id: "*"
+    },
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache, geth, or parity) in a separate terminal
