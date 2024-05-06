@@ -1,0 +1,1474 @@
+{
+  "contractName": "FlexCoin",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferHouse",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "getHouse",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "numHouses",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "newHouse",
+      "outputs": [],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "flexCoinAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "buyerFlex",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "smartMeter",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "flexAmount",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "name": "interval",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "smartMeterPlan",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.11+commit.68ef5810\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"transferHouse\",\"outputs\":[],\"payable\":false,\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getHouse\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"numHouses\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"newHouse\",\"outputs\":[],\"payable\":true,\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"flexCoinAmount\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"buyerFlex\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"smartMeter\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"flexAmount\",\"type\":\"int256\"},{\"indexed\":false,\"name\":\"interval\",\"type\":\"uint256[]\"}],\"name\":\"smartMeterPlan\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FlexCoin.sol\":\"FlexCoin\"},\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Duration.sol\":{\"keccak256\":\"0xb53dcff5f9f3763413a8aba8e6f27d64635e963ca5edff0c1cd646b6e1de6ed3\",\"urls\":[\"bzzr://ed4be17de084bd72dec2fa3362bee755c8c5be6d7de79333345b1d800c420196\"]},\"project:/contracts/DurationSecure.sol\":{\"keccak256\":\"0xbd750c102a3eeaf5f4491ff3ab9e39602662021ca966f0af7cfc5b973cd38dfe\",\"urls\":[\"bzzr://1222cbe64ed5b121c9ab7663efedb1d11f19bad578a2ecc499929ff980d87f5e\"]},\"project:/contracts/FlexCoin.sol\":{\"keccak256\":\"0x1fad5ae67cfa99de99ff10262722551b024a353c688fe37e70b8828428ae6b7a\",\"urls\":[\"bzzr://7bc2e6a9a88de55aef44e618f8269f98611f21ae80910448bcc2038f5e552cf7\"]},\"project:/contracts/FutureBlock.sol\":{\"keccak256\":\"0x3aca29c3290dfaba428c91d80a0c42a12141ae9c6b3b175d250a484e1a8f30d4\",\"urls\":[\"bzzr://eb84f12fb103ba8c8dca5272f6c8222b02f76437d7a30d4ade1630e7199030ab\"]},\"project:/contracts/RealTime.sol\":{\"keccak256\":\"0xdd42c67884be3af15b38cad799b99ba57ca0169eca666be44d60d0141275cb94\",\"urls\":[\"bzzr://84122cbbf64a7e4a6ba0a343ff0bd66bb29a465a0120dcd9bde3b3f165170759\"]}},\"version\":1}",
+  "bytecode": "0x6060604052341561000c57fe5b5b61051e8061001c6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063052c36c01461005c5780633991737a146100ba5780638d8447f614610137578063fa481f861461015d575bfe5b341561006457fe5b6100b8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610167565b005b34156100c257fe5b6100ee600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610394565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b341561013f57fe5b610147610448565b6040518082815260200191505060405180910390f35b61016561044e565b005b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154101515156101b95760006000fd5b600060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002015481600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154011015151561024f5760006000fd5b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000828254039250508190555080600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201600082825401925050819055507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef838383604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a15b505050565b60006000600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154915091505b915091565b60015481565b6000600160015401600181905550600060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209050338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550642e90edd00081600201819055505b505600a165627a7a723058200edaa00aa261d78edbb6e6b357d73bf16eb415add97214e1376f0ebf924512680029",
+  "deployedBytecode": "0x60606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063052c36c01461005c5780633991737a146100ba5780638d8447f614610137578063fa481f861461015d575bfe5b341561006457fe5b6100b8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610167565b005b34156100c257fe5b6100ee600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610394565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b341561013f57fe5b610147610448565b6040518082815260200191505060405180910390f35b61016561044e565b005b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154101515156101b95760006000fd5b600060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002015481600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154011015151561024f5760006000fd5b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000828254039250508190555080600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201600082825401925050819055507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef838383604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a15b505050565b60006000600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154915091505b915091565b60015481565b6000600160015401600181905550600060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209050338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550642e90edd00081600201819055505b505600a165627a7a723058200edaa00aa261d78edbb6e6b357d73bf16eb415add97214e1376f0ebf924512680029",
+  "sourceMap": "218:1436:2:-;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "218:1436:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1091:533;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;918:165;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;397:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;688:197;;;;;;1091:533;1207:7;1174:6;:13;1181:5;1174:13;;;;;;;;;;;;;;;:29;;;:40;;1166:49;;;;;;;;1319:6;:11;1326:3;1319:11;;;;;;;;;;;;;;;:27;;;1308:7;1278:6;:11;1285:3;1278:11;;;;;;;;;;;;;;;:27;;;:37;:68;;1270:77;;;;;;;;1414:7;1381:6;:13;1388:5;1381:13;;;;;;;;;;;;;;;:29;;;:40;;;;;;;;;;;1510:7;1479:6;:11;1486:3;1479:11;;;;;;;;;;;;;;;:27;;;:38;;;;;;;;;;;1587:29;1596:5;1603:3;1608:7;1587:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1091:533;;;;:::o;918:165::-;979:7;988:4;1013:6;:16;1020:8;1013:16;;;;;;;;;;;;;;;:27;;;;;;;;;;;;1042:6;:16;1049:8;1042:16;;;;;;;;;;;;;;;:32;;;1005:70;;;;918:165;;;;:::o;397:21::-;;;;:::o;688:197::-;770:7;758:1;746:9;;:13;734:9;:25;;;;780:6;:18;787:10;780:18;;;;;;;;;;;;;;;770:28;;824:10;809:1;:12;;;:25;;;;;;;;;;;;;;;;;;865:12;845:1;:17;;:32;;;;688:197;;:::o",
+  "source": "\r\npragma solidity ^0.4.11;\r\n\r\n// This contract must build the coin that should be used in the different trading mechanisms.\r\n// If other things are common for the mechanisms, this is the place to include the things\r\n\r\ncontract FlexCoin {\r\n\r\n    struct House {\r\n        address owner;\r\n        address smartMeter;\r\n        uint flexCoinBalance;\r\n    }\r\n\r\n    mapping(address => House) houses;\r\n    uint public numHouses;\r\n\r\n    event Transfer(address from, address to, uint flexCoinAmount);\r\n    event smartMeterPlan(address buyerFlex, address smartMeter, int flexAmount, uint[] interval);\r\n    // This event is sent to the smart meters, telling them what to do, and when to do it.\r\n\r\n    function newHouse() payable public {\r\n        numHouses = numHouses + 1;\r\n        House h = houses[msg.sender];\r\n        h.smartMeter = msg.sender;\r\n        h.flexCoinBalance = 200000000000;\r\n    }\r\n    // gas cost: 37 041\r\n\r\n    function getHouse(address _address) public constant returns (address, uint) {\r\n        return (houses[_address].smartMeter, houses[_address].flexCoinBalance);\r\n    }\r\n\r\n    function transferHouse(address _from, address _to, uint _amount){\r\n        require(houses[_from].flexCoinBalance >= _amount);           // Check if the sender has enough\r\n        require(houses[_to].flexCoinBalance + _amount >= houses[_to].flexCoinBalance); // Check for overflows\r\n        houses[_from].flexCoinBalance -= _amount;                    // Subtract from the sender\r\n        houses[_to].flexCoinBalance += _amount;                           // Add the same to the recipient\r\n        Transfer(_from, _to, _amount);\r\n    }\r\n    // gas cost: 37 878\r\n\r\n}\r\n",
+  "sourcePath": "C:\\Users\\inaya\\Documents\\SEMESTER 6\\SEMESTER 6\\6_DistSys\\besu\\truffle-proj\\contracts\\FlexCoin.sol",
+  "legacyAST": {
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".11"
+          ]
+        },
+        "id": 524,
+        "name": "PragmaDirective",
+        "src": "2:24:2"
+      },
+      {
+        "attributes": {
+          "fullyImplemented": true,
+          "isLibrary": false,
+          "linearizedBaseContracts": [
+            660
+          ],
+          "name": "FlexCoin"
+        },
+        "children": [
+          {
+            "attributes": {
+              "name": "House"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "owner",
+                  "storageLocation": "default",
+                  "type": "address",
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address"
+                    },
+                    "id": 525,
+                    "name": "ElementaryTypeName",
+                    "src": "269:7:2"
+                  }
+                ],
+                "id": 526,
+                "name": "VariableDeclaration",
+                "src": "269:13:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "smartMeter",
+                  "storageLocation": "default",
+                  "type": "address",
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address"
+                    },
+                    "id": 527,
+                    "name": "ElementaryTypeName",
+                    "src": "293:7:2"
+                  }
+                ],
+                "id": 528,
+                "name": "VariableDeclaration",
+                "src": "293:18:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "flexCoinBalance",
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint"
+                    },
+                    "id": 529,
+                    "name": "ElementaryTypeName",
+                    "src": "322:4:2"
+                  }
+                ],
+                "id": 530,
+                "name": "VariableDeclaration",
+                "src": "322:20:2"
+              }
+            ],
+            "id": 531,
+            "name": "StructDefinition",
+            "src": "245:105:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "houses",
+              "storageLocation": "default",
+              "type": "mapping(address => struct FlexCoin.House storage ref)",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address"
+                    },
+                    "id": 532,
+                    "name": "ElementaryTypeName",
+                    "src": "366:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "name": "House"
+                    },
+                    "id": 533,
+                    "name": "UserDefinedTypeName",
+                    "src": "377:5:2"
+                  }
+                ],
+                "id": 534,
+                "name": "Mapping",
+                "src": "358:25:2"
+              }
+            ],
+            "id": 535,
+            "name": "VariableDeclaration",
+            "src": "358:32:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "numHouses",
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint"
+                },
+                "id": 536,
+                "name": "ElementaryTypeName",
+                "src": "397:4:2"
+              }
+            ],
+            "id": 537,
+            "name": "VariableDeclaration",
+            "src": "397:21:2"
+          },
+          {
+            "attributes": {
+              "name": "Transfer"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "from",
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address"
+                        },
+                        "id": 538,
+                        "name": "ElementaryTypeName",
+                        "src": "442:7:2"
+                      }
+                    ],
+                    "id": 539,
+                    "name": "VariableDeclaration",
+                    "src": "442:12:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "to",
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address"
+                        },
+                        "id": 540,
+                        "name": "ElementaryTypeName",
+                        "src": "456:7:2"
+                      }
+                    ],
+                    "id": 541,
+                    "name": "VariableDeclaration",
+                    "src": "456:10:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "flexCoinAmount",
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint"
+                        },
+                        "id": 542,
+                        "name": "ElementaryTypeName",
+                        "src": "468:4:2"
+                      }
+                    ],
+                    "id": 543,
+                    "name": "VariableDeclaration",
+                    "src": "468:19:2"
+                  }
+                ],
+                "id": 544,
+                "name": "ParameterList",
+                "src": "441:47:2"
+              }
+            ],
+            "id": 545,
+            "name": "EventDefinition",
+            "src": "427:62:2"
+          },
+          {
+            "attributes": {
+              "name": "smartMeterPlan"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "buyerFlex",
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address"
+                        },
+                        "id": 546,
+                        "name": "ElementaryTypeName",
+                        "src": "516:7:2"
+                      }
+                    ],
+                    "id": 547,
+                    "name": "VariableDeclaration",
+                    "src": "516:17:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "smartMeter",
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address"
+                        },
+                        "id": 548,
+                        "name": "ElementaryTypeName",
+                        "src": "535:7:2"
+                      }
+                    ],
+                    "id": 549,
+                    "name": "VariableDeclaration",
+                    "src": "535:18:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "flexAmount",
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int"
+                        },
+                        "id": 550,
+                        "name": "ElementaryTypeName",
+                        "src": "555:3:2"
+                      }
+                    ],
+                    "id": 551,
+                    "name": "VariableDeclaration",
+                    "src": "555:14:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "interval",
+                      "storageLocation": "default",
+                      "type": "uint256[] memory",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint"
+                            },
+                            "id": 552,
+                            "name": "ElementaryTypeName",
+                            "src": "571:4:2"
+                          }
+                        ],
+                        "id": 553,
+                        "name": "ArrayTypeName",
+                        "src": "571:6:2"
+                      }
+                    ],
+                    "id": 554,
+                    "name": "VariableDeclaration",
+                    "src": "571:15:2"
+                  }
+                ],
+                "id": 555,
+                "name": "ParameterList",
+                "src": "515:72:2"
+              }
+            ],
+            "id": 556,
+            "name": "EventDefinition",
+            "src": "495:93:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "newHouse",
+              "payable": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [],
+                "id": 557,
+                "name": "ParameterList",
+                "src": "705:2:2"
+              },
+              {
+                "children": [],
+                "id": 558,
+                "name": "ParameterList",
+                "src": "723:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "type": "uint256",
+                              "value": "numHouses"
+                            },
+                            "id": 559,
+                            "name": "Identifier",
+                            "src": "734:9:2"
+                          },
+                          {
+                            "attributes": {
+                              "operator": "+",
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "uint256",
+                                  "value": "numHouses"
+                                },
+                                "id": 560,
+                                "name": "Identifier",
+                                "src": "746:9:2"
+                              },
+                              {
+                                "attributes": {
+                                  "hexvalue": "31",
+                                  "subdenomination": null,
+                                  "token": null,
+                                  "type": "int_const 1",
+                                  "value": "1"
+                                },
+                                "id": 561,
+                                "name": "Literal",
+                                "src": "758:1:2"
+                              }
+                            ],
+                            "id": 562,
+                            "name": "BinaryOperation",
+                            "src": "746:13:2"
+                          }
+                        ],
+                        "id": 563,
+                        "name": "Assignment",
+                        "src": "734:25:2"
+                      }
+                    ],
+                    "id": 564,
+                    "name": "ExpressionStatement",
+                    "src": "734:25:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "h",
+                          "storageLocation": "default",
+                          "type": "struct FlexCoin.House storage pointer",
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "House"
+                            },
+                            "id": 565,
+                            "name": "UserDefinedTypeName",
+                            "src": "770:5:2"
+                          }
+                        ],
+                        "id": 566,
+                        "name": "VariableDeclaration",
+                        "src": "770:7:2"
+                      },
+                      {
+                        "attributes": {
+                          "type": "struct FlexCoin.House storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "type": "mapping(address => struct FlexCoin.House storage ref)",
+                              "value": "houses"
+                            },
+                            "id": 567,
+                            "name": "Identifier",
+                            "src": "780:6:2"
+                          },
+                          {
+                            "attributes": {
+                              "member_name": "sender",
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 568,
+                                "name": "Identifier",
+                                "src": "787:3:2"
+                              }
+                            ],
+                            "id": 569,
+                            "name": "MemberAccess",
+                            "src": "787:10:2"
+                          }
+                        ],
+                        "id": 570,
+                        "name": "IndexAccess",
+                        "src": "780:18:2"
+                      }
+                    ],
+                    "id": 571,
+                    "name": "VariableDeclarationStatement",
+                    "src": "770:28:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "member_name": "smartMeter",
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "struct FlexCoin.House storage pointer",
+                                  "value": "h"
+                                },
+                                "id": 572,
+                                "name": "Identifier",
+                                "src": "809:1:2"
+                              }
+                            ],
+                            "id": 574,
+                            "name": "MemberAccess",
+                            "src": "809:12:2"
+                          },
+                          {
+                            "attributes": {
+                              "member_name": "sender",
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 575,
+                                "name": "Identifier",
+                                "src": "824:3:2"
+                              }
+                            ],
+                            "id": 576,
+                            "name": "MemberAccess",
+                            "src": "824:10:2"
+                          }
+                        ],
+                        "id": 577,
+                        "name": "Assignment",
+                        "src": "809:25:2"
+                      }
+                    ],
+                    "id": 578,
+                    "name": "ExpressionStatement",
+                    "src": "809:25:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "member_name": "flexCoinBalance",
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "struct FlexCoin.House storage pointer",
+                                  "value": "h"
+                                },
+                                "id": 579,
+                                "name": "Identifier",
+                                "src": "845:1:2"
+                              }
+                            ],
+                            "id": 581,
+                            "name": "MemberAccess",
+                            "src": "845:17:2"
+                          },
+                          {
+                            "attributes": {
+                              "hexvalue": "323030303030303030303030",
+                              "subdenomination": null,
+                              "token": null,
+                              "type": "int_const 200000000000",
+                              "value": "200000000000"
+                            },
+                            "id": 582,
+                            "name": "Literal",
+                            "src": "865:12:2"
+                          }
+                        ],
+                        "id": 583,
+                        "name": "Assignment",
+                        "src": "845:32:2"
+                      }
+                    ],
+                    "id": 584,
+                    "name": "ExpressionStatement",
+                    "src": "845:32:2"
+                  }
+                ],
+                "id": 585,
+                "name": "Block",
+                "src": "723:162:2"
+              }
+            ],
+            "id": 586,
+            "name": "FunctionDefinition",
+            "src": "688:197:2"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "name": "getHouse",
+              "payable": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_address",
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address"
+                        },
+                        "id": 587,
+                        "name": "ElementaryTypeName",
+                        "src": "936:7:2"
+                      }
+                    ],
+                    "id": 588,
+                    "name": "VariableDeclaration",
+                    "src": "936:16:2"
+                  }
+                ],
+                "id": 589,
+                "name": "ParameterList",
+                "src": "935:18:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address"
+                        },
+                        "id": 590,
+                        "name": "ElementaryTypeName",
+                        "src": "979:7:2"
+                      }
+                    ],
+                    "id": 591,
+                    "name": "VariableDeclaration",
+                    "src": "979:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint"
+                        },
+                        "id": 592,
+                        "name": "ElementaryTypeName",
+                        "src": "988:4:2"
+                      }
+                    ],
+                    "id": 593,
+                    "name": "VariableDeclaration",
+                    "src": "988:4:2"
+                  }
+                ],
+                "id": 594,
+                "name": "ParameterList",
+                "src": "978:15:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "member_name": "smartMeter",
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "struct FlexCoin.House storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "type": "mapping(address => struct FlexCoin.House storage ref)",
+                                      "value": "houses"
+                                    },
+                                    "id": 595,
+                                    "name": "Identifier",
+                                    "src": "1013:6:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "type": "address",
+                                      "value": "_address"
+                                    },
+                                    "id": 596,
+                                    "name": "Identifier",
+                                    "src": "1020:8:2"
+                                  }
+                                ],
+                                "id": 597,
+                                "name": "IndexAccess",
+                                "src": "1013:16:2"
+                              }
+                            ],
+                            "id": 598,
+                            "name": "MemberAccess",
+                            "src": "1013:27:2"
+                          },
+                          {
+                            "attributes": {
+                              "member_name": "flexCoinBalance",
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "struct FlexCoin.House storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "type": "mapping(address => struct FlexCoin.House storage ref)",
+                                      "value": "houses"
+                                    },
+                                    "id": 599,
+                                    "name": "Identifier",
+                                    "src": "1042:6:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "type": "address",
+                                      "value": "_address"
+                                    },
+                                    "id": 600,
+                                    "name": "Identifier",
+                                    "src": "1049:8:2"
+                                  }
+                                ],
+                                "id": 601,
+                                "name": "IndexAccess",
+                                "src": "1042:16:2"
+                              }
+                            ],
+                            "id": 602,
+                            "name": "MemberAccess",
+                            "src": "1042:32:2"
+                          }
+                        ],
+                        "id": 603,
+                        "name": "TupleExpression",
+                        "src": "1012:63:2"
+                      }
+                    ],
+                    "id": 604,
+                    "name": "Return",
+                    "src": "1005:70:2"
+                  }
+                ],
+                "id": 605,
+                "name": "Block",
+                "src": "994:89:2"
+              }
+            ],
+            "id": 606,
+            "name": "FunctionDefinition",
+            "src": "918:165:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "transferHouse",
+              "payable": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_from",
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address"
+                        },
+                        "id": 607,
+                        "name": "ElementaryTypeName",
+                        "src": "1114:7:2"
+                      }
+                    ],
+                    "id": 608,
+                    "name": "VariableDeclaration",
+                    "src": "1114:13:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_to",
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address"
+                        },
+                        "id": 609,
+                        "name": "ElementaryTypeName",
+                        "src": "1129:7:2"
+                      }
+                    ],
+                    "id": 610,
+                    "name": "VariableDeclaration",
+                    "src": "1129:11:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_amount",
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint"
+                        },
+                        "id": 611,
+                        "name": "ElementaryTypeName",
+                        "src": "1142:4:2"
+                      }
+                    ],
+                    "id": 612,
+                    "name": "VariableDeclaration",
+                    "src": "1142:12:2"
+                  }
+                ],
+                "id": 613,
+                "name": "ParameterList",
+                "src": "1113:42:2"
+              },
+              {
+                "children": [],
+                "id": 614,
+                "name": "ParameterList",
+                "src": "1155:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "type": "function (bool)",
+                              "value": "require"
+                            },
+                            "id": 615,
+                            "name": "Identifier",
+                            "src": "1166:7:2"
+                          },
+                          {
+                            "attributes": {
+                              "operator": ">=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "member_name": "flexCoinBalance",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "type": "struct FlexCoin.House storage ref"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "type": "mapping(address => struct FlexCoin.House storage ref)",
+                                          "value": "houses"
+                                        },
+                                        "id": 616,
+                                        "name": "Identifier",
+                                        "src": "1174:6:2"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "type": "address",
+                                          "value": "_from"
+                                        },
+                                        "id": 617,
+                                        "name": "Identifier",
+                                        "src": "1181:5:2"
+                                      }
+                                    ],
+                                    "id": 618,
+                                    "name": "IndexAccess",
+                                    "src": "1174:13:2"
+                                  }
+                                ],
+                                "id": 619,
+                                "name": "MemberAccess",
+                                "src": "1174:29:2"
+                              },
+                              {
+                                "attributes": {
+                                  "type": "uint256",
+                                  "value": "_amount"
+                                },
+                                "id": 620,
+                                "name": "Identifier",
+                                "src": "1207:7:2"
+                              }
+                            ],
+                            "id": 621,
+                            "name": "BinaryOperation",
+                            "src": "1174:40:2"
+                          }
+                        ],
+                        "id": 622,
+                        "name": "FunctionCall",
+                        "src": "1166:49:2"
+                      }
+                    ],
+                    "id": 623,
+                    "name": "ExpressionStatement",
+                    "src": "1166:49:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "type": "function (bool)",
+                              "value": "require"
+                            },
+                            "id": 624,
+                            "name": "Identifier",
+                            "src": "1270:7:2"
+                          },
+                          {
+                            "attributes": {
+                              "operator": ">=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "operator": "+",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "member_name": "flexCoinBalance",
+                                      "type": "uint256"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "type": "struct FlexCoin.House storage ref"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "type": "mapping(address => struct FlexCoin.House storage ref)",
+                                              "value": "houses"
+                                            },
+                                            "id": 625,
+                                            "name": "Identifier",
+                                            "src": "1278:6:2"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "type": "address",
+                                              "value": "_to"
+                                            },
+                                            "id": 626,
+                                            "name": "Identifier",
+                                            "src": "1285:3:2"
+                                          }
+                                        ],
+                                        "id": 627,
+                                        "name": "IndexAccess",
+                                        "src": "1278:11:2"
+                                      }
+                                    ],
+                                    "id": 628,
+                                    "name": "MemberAccess",
+                                    "src": "1278:27:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "type": "uint256",
+                                      "value": "_amount"
+                                    },
+                                    "id": 629,
+                                    "name": "Identifier",
+                                    "src": "1308:7:2"
+                                  }
+                                ],
+                                "id": 630,
+                                "name": "BinaryOperation",
+                                "src": "1278:37:2"
+                              },
+                              {
+                                "attributes": {
+                                  "member_name": "flexCoinBalance",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "type": "struct FlexCoin.House storage ref"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "type": "mapping(address => struct FlexCoin.House storage ref)",
+                                          "value": "houses"
+                                        },
+                                        "id": 631,
+                                        "name": "Identifier",
+                                        "src": "1319:6:2"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "type": "address",
+                                          "value": "_to"
+                                        },
+                                        "id": 632,
+                                        "name": "Identifier",
+                                        "src": "1326:3:2"
+                                      }
+                                    ],
+                                    "id": 633,
+                                    "name": "IndexAccess",
+                                    "src": "1319:11:2"
+                                  }
+                                ],
+                                "id": 634,
+                                "name": "MemberAccess",
+                                "src": "1319:27:2"
+                              }
+                            ],
+                            "id": 635,
+                            "name": "BinaryOperation",
+                            "src": "1278:68:2"
+                          }
+                        ],
+                        "id": 636,
+                        "name": "FunctionCall",
+                        "src": "1270:77:2"
+                      }
+                    ],
+                    "id": 637,
+                    "name": "ExpressionStatement",
+                    "src": "1270:77:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "operator": "-=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "member_name": "flexCoinBalance",
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "struct FlexCoin.House storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "type": "mapping(address => struct FlexCoin.House storage ref)",
+                                      "value": "houses"
+                                    },
+                                    "id": 638,
+                                    "name": "Identifier",
+                                    "src": "1381:6:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "type": "address",
+                                      "value": "_from"
+                                    },
+                                    "id": 639,
+                                    "name": "Identifier",
+                                    "src": "1388:5:2"
+                                  }
+                                ],
+                                "id": 640,
+                                "name": "IndexAccess",
+                                "src": "1381:13:2"
+                              }
+                            ],
+                            "id": 641,
+                            "name": "MemberAccess",
+                            "src": "1381:29:2"
+                          },
+                          {
+                            "attributes": {
+                              "type": "uint256",
+                              "value": "_amount"
+                            },
+                            "id": 642,
+                            "name": "Identifier",
+                            "src": "1414:7:2"
+                          }
+                        ],
+                        "id": 643,
+                        "name": "Assignment",
+                        "src": "1381:40:2"
+                      }
+                    ],
+                    "id": 644,
+                    "name": "ExpressionStatement",
+                    "src": "1381:40:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "operator": "+=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "member_name": "flexCoinBalance",
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "type": "struct FlexCoin.House storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "type": "mapping(address => struct FlexCoin.House storage ref)",
+                                      "value": "houses"
+                                    },
+                                    "id": 645,
+                                    "name": "Identifier",
+                                    "src": "1479:6:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "type": "address",
+                                      "value": "_to"
+                                    },
+                                    "id": 646,
+                                    "name": "Identifier",
+                                    "src": "1486:3:2"
+                                  }
+                                ],
+                                "id": 647,
+                                "name": "IndexAccess",
+                                "src": "1479:11:2"
+                              }
+                            ],
+                            "id": 648,
+                            "name": "MemberAccess",
+                            "src": "1479:27:2"
+                          },
+                          {
+                            "attributes": {
+                              "type": "uint256",
+                              "value": "_amount"
+                            },
+                            "id": 649,
+                            "name": "Identifier",
+                            "src": "1510:7:2"
+                          }
+                        ],
+                        "id": 650,
+                        "name": "Assignment",
+                        "src": "1479:38:2"
+                      }
+                    ],
+                    "id": 651,
+                    "name": "ExpressionStatement",
+                    "src": "1479:38:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "type": "function (address,address,uint256) constant",
+                              "value": "Transfer"
+                            },
+                            "id": 652,
+                            "name": "Identifier",
+                            "src": "1587:8:2"
+                          },
+                          {
+                            "attributes": {
+                              "type": "address",
+                              "value": "_from"
+                            },
+                            "id": 653,
+                            "name": "Identifier",
+                            "src": "1596:5:2"
+                          },
+                          {
+                            "attributes": {
+                              "type": "address",
+                              "value": "_to"
+                            },
+                            "id": 654,
+                            "name": "Identifier",
+                            "src": "1603:3:2"
+                          },
+                          {
+                            "attributes": {
+                              "type": "uint256",
+                              "value": "_amount"
+                            },
+                            "id": 655,
+                            "name": "Identifier",
+                            "src": "1608:7:2"
+                          }
+                        ],
+                        "id": 656,
+                        "name": "FunctionCall",
+                        "src": "1587:29:2"
+                      }
+                    ],
+                    "id": 657,
+                    "name": "ExpressionStatement",
+                    "src": "1587:29:2"
+                  }
+                ],
+                "id": 658,
+                "name": "Block",
+                "src": "1155:469:2"
+              }
+            ],
+            "id": 659,
+            "name": "FunctionDefinition",
+            "src": "1091:533:2"
+          }
+        ],
+        "id": 660,
+        "name": "ContractDefinition",
+        "src": "218:1436:2"
+      }
+    ],
+    "name": "SourceUnit"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.11+commit.68ef5810.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-05-06T16:55:24.969Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
