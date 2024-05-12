@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 # - That supp and demand is the same size => perfectly adequate.
 
 web3 = Web3(HTTPProvider('http://localhost:8545'))
-jsonFile = open('/home/fred/Documents/energyEth/build/contracts.json', 'r')
+jsonFile = open('/contracts/Duration.sol', 'r')
 values = json.load(jsonFile)
 jsonFile.close()
 

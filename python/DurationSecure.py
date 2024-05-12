@@ -14,11 +14,12 @@ import matplotlib.pyplot as plt
 # - That supp and demand is the same size => perfectly adequate.
 
 web3 = Web3(HTTPProvider('http://localhost:8545'))
-jsonFile = open('/home/fred/Documents/energyEth/build/contracts.json', 'r')
+jsonFile = open('/contracts/DurationSecure.sol', 'r')
 values = json.load(jsonFile)
 jsonFile.close()
 
 abi = values['DurationSecure']['abi']
+
 address = input("What is the contract address? - DurationSecure: ")
 DurationSecure = web3.eth.contract(address, abi = abi)
 

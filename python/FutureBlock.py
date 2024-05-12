@@ -6,7 +6,7 @@ import FlexCoin
 # Compile and deploy in populus in one terminal and testrpc-py in another
 # Open a new terminal and rund this python script in python3
 web3 = Web3(HTTPProvider('http://localhost:8545'))
-jsonFile = open('/home/fred/Documents/energyEth/build/contracts.json', 'r')
+jsonFile = open('/contracts/FutureBlock.sol', 'r')
 values = json.load(jsonFile)
 jsonFile.close()
 

@@ -5,7 +5,7 @@ import json
 ## This function makes a house to each node in the system
 
 web3 = Web3(HTTPProvider('http://localhost:8545'))
-jsonFile = open('/home/fred/Documents/energyEth/build/contracts.json', 'r')
+jsonFile = open('/contracts/FlexCoin.sol', 'r')
 values = json.load(jsonFile)
 jsonFile.close()
 
