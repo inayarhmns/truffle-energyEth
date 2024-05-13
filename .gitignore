@@ -134,3 +134,4 @@ dist
 
 # IntelliJ
 .idea
+myenv/
