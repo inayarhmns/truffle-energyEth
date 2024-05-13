@@ -13,11 +13,11 @@ import FlexCoin
 # Compile and deploy in populus in one terminal and testrpc-py in another
 # Open a new terminal and run this python script in python3
 web3 = Web3(HTTPProvider('http://localhost:8545'))
-jsonFile = open('/contracts/RealTime.sol', 'r')
+jsonFile = open('./build/contracts/RealTime.json', 'r')
 values = json.load(jsonFile)
 jsonFile.close()
 
-abi = values['RealTime']['abi']
+abi = values['abi']
 address = input("What is the contract address? - RealTime: ")
 RealTime = web3.eth.contract(address, abi = abi)
 
@@ -106,7 +106,7 @@ def trade(numTxCentral, numTxNodes, numTxInitiate, price, battery, availableFlex
 
     # The for loop below is the central node fetching all information from the blockchain
     for i in range(0,numHouses):
-        h = RealTime.call().getRealTimeNode(i)
+        h = RealTime.caller().getRealTimeNode(i)
         if (h[5] < 0):
             demand[0].append(i)
             demand[1].append(-h[5])
@@ -209,12 +209,12 @@ def testRealTime(numHouses, numPeriods):
     ####### If creates new nodes in the blockchain network, and giving them ether, which is necessary in order to trade
     ####### Thereafter, it is created a new house from its address
     #####################################################################################
-    while (FlexCoin.FlexCoin.call().numHouses() < numHouses):
+    while (FlexCoin.FlexCoin.caller().numHouses() < numHouses):
         web3.personal.newAccount('pass') # Pass is the password necessary to unlock the account.
-        web3.personal.unlockAccount(web3.eth.accounts[FlexCoin.FlexCoin.call().numHouses()], 'pass')
-        web3.eth.sendTransaction({'to': web3.eth.accounts[FlexCoin.FlexCoin.call().numHouses()], 'from': web3.eth.coinbase, 'value': 123456789})
+        web3.personal.unlockAccount(web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'pass')
+        web3.eth.sendTransaction({'to': web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'from': web3.eth.coinbase, 'value': 123456789})
         ################# Now, the new node is created, and have an amount of ether. We must now create a house in his address
-        FlexCoin.FlexCoin.transact().newHouse({'from': web3.eth.accounts[FlexCoin.FlexCoin.call().numHouses()]})
+        FlexCoin.FlexCoin.transact().newHouse({'from': web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()]})
 
     ### The variables below is used to measure the amount of transactions which is done in the system
     ## Central is the central node, node is how many each node sends in, and initiate is when a new account is initiated.
@@ -247,8 +247,8 @@ def testRealTime(numHouses, numPeriods):
             price[i][1][j] = random.randint(350, 460)
 
     for j in range(0,numHouses):
-        _, flexCoinBalance[0][j] = FlexCoin.FlexCoin.call().getHouse(web3.eth.accounts[j])
-    marketPrice = [RealTime.call().wholesalePrice() for x in range(0,numPeriods)]
+        _, flexCoinBalance[0][j] = FlexCoin.FlexCoin.caller().getHouse(web3.eth.accounts[j])
+    marketPrice = [RealTime.caller().wholesalePrice() for x in range(0,numPeriods)]
 
     for i in range(0, numPeriods): #144 for a whole day
 
@@ -277,7 +277,7 @@ def testRealTime(numHouses, numPeriods):
         for j in range(0,numHouses):
             if (battery[i][j] > battery[i - 1][j]):
                 battery[i][j] = round(int(0.9 * battery[i][j]))
-            _, flexCoinBalance[i][j] = FlexCoin.FlexCoin.call().getHouse(web3.eth.accounts[j])
+            _, flexCoinBalance[i][j] = FlexCoin.FlexCoin.caller().getHouse(web3.eth.accounts[j])
 
     averageNode = (sum(nodeCost)/numPeriods)
     averageCentral = sum(centralCost)/numPeriods

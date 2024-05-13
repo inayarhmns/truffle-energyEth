@@ -6,11 +6,11 @@ import FlexCoin
 # Compile and deploy in populus in one terminal and testrpc-py in another
 # Open a new terminal and rund this python script in python3
 web3 = Web3(HTTPProvider('http://localhost:8545'))
-jsonFile = open('/contracts/FutureBlock.sol', 'r')
+jsonFile = open('./build/contracts/FutureBlock.json', 'r')
 values = json.load(jsonFile)
 jsonFile.close()
 
-abi = values['FutureBlock']['abi']
+abi = values['abi']
 address = input("What is the contract address? - FutureBlock: ")
 FutureBlock = web3.eth.contract(address, abi = abi)
 cost = 0
@@ -20,7 +20,7 @@ cost = 0
 def testFutureBlock():
     tempCost = []
     tempCost.append(FutureBlock.transact({'from': web3.eth.accounts[0]}).newOffer(15, 150, 180))
-    a = FutureBlock.call().numOffers()
+    a = FutureBlock.caller().numOffers()
     tempCost.append(FutureBlock.transact({'from': web3.eth.accounts[1]}).setBid(a, 10, 40))
     tempCost.append(FutureBlock.transact({'from': web3.eth.accounts[2]}).setBid(a, 10, 40))
     tempCost.append(FutureBlock.transact({'from': web3.eth.accounts[3]}).setBid(a, 10, 40))
