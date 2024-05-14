@@ -9,10 +9,14 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 import FlexCoin
+from web3.middleware import geth_poa_middleware
 
 # Compile and deploy in populus in one terminal and testrpc-py in another
 # Open a new terminal and run this python script in python3
-web3 = Web3(HTTPProvider('http://localhost:8545'))
+host = 'http://127.0.0.1:9000'  # Web3Signer URL
+
+web3 = Web3(HTTPProvider(host))
+web3.middleware_onion.inject(geth_poa_middleware, layer=0)
 jsonFile = open('./build/contracts/RealTime.json', 'r')
 values = json.load(jsonFile)
 jsonFile.close()
@@ -210,8 +214,8 @@ def testRealTime(numHouses, numPeriods):
     ####### Thereafter, it is created a new house from its address
     #####################################################################################
     while (FlexCoin.FlexCoin.caller().numHouses() < numHouses):
-        web3.personal.newAccount('pass') # Pass is the password necessary to unlock the account.
-        web3.personal.unlockAccount(web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'pass')
+        web3.eth.personal.newAccount('pass') # Pass is the password necessary to unlock the account.
+        web3.eth.personal.unlockAccount(web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'pass')
         web3.eth.sendTransaction({'to': web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'from': web3.eth.coinbase, 'value': 123456789})
         ################# Now, the new node is created, and have an amount of ether. We must now create a house in his address
         FlexCoin.FlexCoin.transact().newHouse({'from': web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()]})

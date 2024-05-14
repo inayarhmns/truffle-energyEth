@@ -5,6 +5,7 @@ import numpy as np
 import random
 import copy
 import matplotlib.pyplot as plt
+from web3.middleware import geth_poa_middleware
 
 ############### ASSUMPTIONS ###############
 # This is a simplified python script. The following assumptions hold;
@@ -12,8 +13,11 @@ import matplotlib.pyplot as plt
 # - The energy for one hour is always 1 kwh, both for supply and demand
 # - The energy is always divided in one hour.
 # - That supp and demand is the same size => perfectly adequate.
+host = 'http://127.0.0.1:9000'  # Web3Signer URL
 
-web3 = Web3(HTTPProvider('http://localhost:8545'))
+web3 = Web3(HTTPProvider(host))
+web3.middleware_onion.inject(geth_poa_middleware, layer=0)
+
 jsonFile = open('./build/contracts/Duration.json', 'r')
 values = json.load(jsonFile)
 jsonFile.close()
