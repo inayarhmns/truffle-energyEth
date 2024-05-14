@@ -28,6 +28,8 @@ def testFutureBlock():
     tempCost = []
     tempCost.append(FutureBlock.functions.newOffer(15, 150, 180).transact({'from': web3.eth.accounts[0]}))
     a = FutureBlock.caller().numOffers()
+    # print(f'offer number : {a}')
+    # print("Flexcoin address: " + str(FlexCoin.address))
     tempCost.append(FutureBlock.functions.setBid(a, 10, 40).transact({'from': web3.eth.accounts[1]}))
     tempCost.append(FutureBlock.functions.setBid(a, 10, 40).transact({'from': web3.eth.accounts[2]}))
     tempCost.append(FutureBlock.functions.setBid(a, 10, 40).transact({'from': web3.eth.accounts[3]}))
@@ -61,8 +63,8 @@ def testFutureBlock():
 
     tempCost.append(FutureBlock.functions.transferAndClose(a, FlexCoin.address).transact())
     for i in range(0,len(tempCost)):
-        tempCost[i] = web3.eth.get_transaction_receipt(tempCost[i]).gasUsed
-        print(f"tempCost: {i}: " + str(tempCost[i]))
+        tempCost[i] = web3.eth.get_transaction(tempCost[i])
+        print(f"tempCost: {i}: " + str(tempCost[i].gas))
 
     return tempCost
 

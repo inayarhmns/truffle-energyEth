@@ -4,6 +4,7 @@ Compiling your contracts...
 > Compiling .\contracts\DurationSecure.sol
 > Compiling .\contracts\FlexCoin.sol
 > Compiling .\contracts\FutureBlock.sol
+> Compiling .\contracts\FutureBlock.sol
 > Compiling .\contracts\RealTime.sol
 > Compilation warnings encountered:
 
@@ -30,13 +31,13 @@ Starting migrations...
 1_duration_migration.js
 =======================
 
-   Deploying 'Duration'
+   Replacing 'Duration'
    --------------------
    > transaction hash:    0x272115b7c6200e613cedb558df156541611269481b4d20a38e14aee31e38d94d
    > Blocks: 0            Seconds: 0
    > contract address:    0x42699A7612A82f1d9C36148af9C77354759b210b
-   > block number:        723
-   > block timestamp:     1715608317
+   > block number:        209
+   > block timestamp:     1715654853
    > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
    > balance:             199.999999999241539
    > gas used:            758461 (0xb92bd)
@@ -52,13 +53,13 @@ Starting migrations...
 2_duration_secure.js
 ====================
 
-   Deploying 'DurationSecure'
+   Replacing 'DurationSecure'
    --------------------------
    > transaction hash:    0x21137d2fc306f167d2c155e60ce52fc5b1b3145fe0e41e03cf4aeb5bb8f5a341
    > Blocks: 0            Seconds: 0
    > contract address:    0xa50a51c09a5c451C52BB714527E1974b686D8e77
-   > block number:        724
-   > block timestamp:     1715608319
+   > block number:        210
+   > block timestamp:     1715654855
    > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
    > balance:             199.999999998511483
    > gas used:            730056 (0xb23c8)
@@ -74,13 +75,13 @@ Starting migrations...
 3_flex_coin.js
 ==============
 
-   Deploying 'FlexCoin'
+   Replacing 'FlexCoin'
    --------------------
    > transaction hash:    0xa3f877d8e71e27dc650450f4bbae3a44f29ad1e3c1d2a586a6a84d2089c143e0
    > Blocks: 0            Seconds: 0
    > contract address:    0x9a3DBCa554e9f6b9257aAa24010DA8377C57c17e
-   > block number:        725
-   > block timestamp:     1715608321
+   > block number:        211
+   > block timestamp:     1715654857
    > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
    > balance:             199.999999998175763
    > gas used:            335720 (0x51f68)
@@ -96,13 +97,13 @@ Starting migrations...
 4_future_block.js
 =================
 
-   Deploying 'FutureBlock'
+   Replacing 'FutureBlock'
    -----------------------
    > transaction hash:    0xa5db26b720b731e58494c09ace79e3b750a1b38a31bca7f36d9dadde29ec77df
    > Blocks: 0            Seconds: 0
    > contract address:    0x9B8397f1B0FEcD3a1a40CdD5E8221Fa461898517
-   > block number:        726
-   > block timestamp:     1715608323
+   > block number:        212
+   > block timestamp:     1715654859
    > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
    > balance:             199.999999997195599
    > gas used:            980164 (0xef4c4)
@@ -118,13 +119,13 @@ Starting migrations...
 5_real_time.js
 ==============
 
-   Deploying 'RealTime'
+   Replacing 'RealTime'
    --------------------
    > transaction hash:    0xcd9cd177ed0fda5107db33b23581cfbf890d68b02969a81d67152861205106b0
    > Blocks: 0            Seconds: 0
    > contract address:    0x2E1f232a9439C3D459FcEca0BeEf13acc8259Dd8
-   > block number:        727
-   > block timestamp:     1715608325
+   > block number:        213
+   > block timestamp:     1715654861
    > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
    > balance:             199.999999996439789
    > gas used:            755810 (0xb8862)
