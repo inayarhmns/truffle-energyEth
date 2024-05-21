@@ -19,7 +19,7 @@ Lalu, jalankan curl ke beberapa api untuk konfigurasi node awal. Cara menjalanka
 
 ### Start Web3signer
 Di proyek ini, jalankan
-`web3signer --key-store-path=./keyFiles/ eth1 --chain-id=1337 --downstream-http-port=8545`
+`web3signer --key-store-path=./keyFiles/pem/ eth1 --chain-id=1337 --downstream-http-port=8545`
 > #Checkpoint: Di sini, kita sudah bisa akses api BESU menggunakan portnya web3signer. Coba akses endpoint BESU dengan ganti localhost:8545 menjadi localhost:9000 (url web3signer)
 ### Run Python Code
 Di proyek ini, jalankan `py src/networks/ibft/interaction/<NamaFile>.py`. Address contracts yang sudah dideploy ada di `compiled_contracts.txt`
