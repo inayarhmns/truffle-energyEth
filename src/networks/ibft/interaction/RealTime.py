@@ -213,22 +213,40 @@ def testRealTime(numHouses, numPeriods):
     ####### If creates new nodes in the blockchain network, and giving them ether, which is necessary in order to trade
     ####### Thereafter, it is created a new house from its address
     #####################################################################################
-    while (FlexCoin.FlexCoin.caller().numHouses() < numHouses):
-        web3.eth.personal.newAccount('pass') # Pass is the password necessary to unlock the account.
-        web3.eth.personal.unlockAccount(web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'pass')
-        web3.eth.sendTransaction({'to': web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'from': web3.eth.coinbase, 'value': 123456789})
-        ################# Now, the new node is created, and have an amount of ether. We must now create a house in his address
-        FlexCoin.FlexCoin.transact().newHouse({'from': web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()]})
+    # while (FlexCoin.FlexCoin.caller().numHouses() < numHouses):
+    #     web3.eth.personal.newAccount('pass') # Pass is the password necessary to unlock the account.
+    #     web3.eth.personal.unlockAccount(web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'pass')
+    #     web3.eth.sendTransaction({'to': web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()], 'from': web3.eth.coinbase, 'value': 123456789})
+    #     ################# Now, the new node is created, and have an amount of ether. We must now create a house in his address
+    #     FlexCoin.FlexCoin.transact().newHouse({'from': web3.eth.accounts[FlexCoin.FlexCoin.caller().numHouses()]})
 
-    ### The variables below is used to measure the amount of transactions which is done in the system
-    ## Central is the central node, node is how many each node sends in, and initiate is when a new account is initiated.
+    # ### The variables below is used to measure the amount of transactions which is done in the system
+    # ## Central is the central node, node is how many each node sends in, and initiate is when a new account is initiated.
+    # numTxCentral = 0
+    # numTxNodes = 0
+    # numTxInitiate = 0
+
+    # for i in range(0,numHouses):
+    #     createNodeCost.append(RealTime.transact().newRealTimeNode(web3.eth.accounts[i]))
+    #     numTxInitiate = numTxInitiate + 1
+    numHouses = min(numHouses, len(web3.eth.accounts)) 
     numTxCentral = 0
     numTxNodes = 0
     numTxInitiate = 0
 
-    for i in range(0,numHouses):
-        createNodeCost.append(RealTime.transact().newRealTimeNode(web3.eth.accounts[i]))
-        numTxInitiate = numTxInitiate + 1
+    createNodeCost = []
+
+    for i in range(numHouses):
+        tx_hash = RealTime.functions.newRealTimeNode(web3.eth.accounts[i]).transact({
+            'from': web3.eth.accounts[1],
+            'gas': 1000000,
+            'gasPrice': 0,
+            'nonce': web3.eth.get_transaction_count(web3.eth.accounts[1])
+        })
+        receipt = web3.eth.wait_for_receipt(tx_hash)
+        createNodeCost.append(receipt.gasUsed)
+        print(f"Gas used for creating RealTime node ({i + 1}): {receipt.gasUsed}")
+        numTxInitiate += 1
 
     deviation = [[0 for x in range(numHouses)] for y in range(numPeriods)]
     battery = [[0 for x in range(numHouses)] for y in range(numPeriods)]
