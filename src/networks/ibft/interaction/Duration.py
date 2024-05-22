@@ -13,7 +13,7 @@ from web3.middleware import geth_poa_middleware
 # - The energy for one hour is always 1 kwh, both for supply and demand
 # - The energy is always divided in one hour.
 # - That supp and demand is the same size => perfectly adequate.
-host = 'http://127.0.0.1:9000'  # Web3Signer URL
+host = 'http://localhost:9000'  # Web3Signer URL
 
 web3 = Web3(HTTPProvider(host))
 web3.middleware_onion.inject(geth_poa_middleware, layer=0)
@@ -47,21 +47,21 @@ def nodeSensitivity(start, stop, steps):
     # This for loop initialises and prepares the houses for trading
     for i in range(0, stop):
         flag = 0
-        if(len(web3.eth.accounts) <= i):
-            web3.personal.newAccount('pass')
-            web3.personal.unlockAccount(web3.eth.accounts[i], 'pass')
-            flag = 1
+        # if(len(web3.eth.accounts) <= i):
+        #     web3.personal.newAccount('pass')
+        #     web3.personal.unlockAccount(web3.eth.accounts[i], 'pass')
+        #     flag = 1
 
         # If the nodes does not have enough ether to perform transactions, this is runned
-        if(web3.eth.get_balance(web3.eth.accounts[i]) < 999999):
-            web3.eth.send_transaction({'to': web3.eth.accounts[i], 'from': web3.eth.coinbase, 'value': 999999, 'gas': 1000000,
-                                        'gasPrice': 0, 'nonce': web3.eth.get_transaction_count(web3.eth.accounts[i]),})
+        # if(web3.eth.get_balance(web3.eth.accounts[i]) < 999999):
+        #     web3.eth.send_transaction({'to': web3.eth.accounts[i], 'from': web3.eth.coinbase, 'value': 999999, 'gas': 1000000,
+        #                                 'gasPrice': 0, 'nonce': web3.eth.get_transaction_count(web3.eth.accounts[i]),})
 
         # Here the new nodes get a house
-        if(flag == 1):
-            FlexCoin.functions.newHouse().transact({'from': web3.eth.accounts[i],'gas': 1000000,
-                                                    'gasPrice': 0,
-                                                    'nonce': web3.eth.get_transaction_count(web3.eth.accounts[i]),})
+        # if(flag == 1):
+        #     FlexCoin.functions.newHouse().transact({'from': web3.eth.accounts[i],'gas': 1000000,
+        #                                             'gasPrice': 0,
+        #                                             'nonce': web3.eth.get_transaction_count(web3.eth.accounts[i]),})
 
     # This increases the node amount, and performs the trading. The if loop inside is for dividing the supply and demand side in even and odd numbers.
     for n in nodes:
@@ -121,9 +121,9 @@ def setSystemData(_numSupply, _numDemand, _steps):
             tempBin = random.randint(0, 1)
             binary[s] = str(tempBin)+ binary[s]
             total = total + tempBin # Total is the total supply we have to cover with demand
-        if(web3.eth.get_balance(web3.eth.accounts[s]) < 999999):
-            web3.personal.unlockAccount(web3.eth.accounts[s], 'pass')
-            web3.eth.send_transaction({'to': web3.eth.accounts[s], 'from': web3.eth.coinbase, 'value': 999999})
+        # if(web3.eth.get_balance(web3.eth.accounts[s]) < 999999):
+        #     web3.personal.unlockAccount(web3.eth.accounts[s], 'pass')
+            # web3.eth.send_transaction({'to': web3.eth.accounts[s], 'from': web3.eth.coinbase, 'value': 999999})
         tempCost = Duration.functions.setNode(0, '', binary[s]).transact({'from': web3.eth.accounts[s]})
         supplyCost = web3.eth.wait_for_transaction_receipt(tempCost).gasUsed + supplyCost
 
@@ -141,9 +141,9 @@ def setSystemData(_numSupply, _numDemand, _steps):
         for t in range(0, _steps):
             # The lowest and highest price is arbitralery set to 150 and 600
             demandString[d] = str(random.randint(150, 600)) + ',' + demandString[d]
-        if(web3.eth.get_balance(web3.eth.accounts[(d + 1) + s]) < 999999):
-            web3.personal.unlockAccount(web3.eth.accounts[(d + 1) + s], 'pass')
-            web3.eth.send_transaction({'to': web3.eth.accounts[(d + 1) + s], 'from': web3.eth.coinbase, 'value': 999999})
+        # if(web3.eth.get_balance(web3.eth.accounts[(d + 1) + s]) < 999999):
+        #     web3.personal.unlockAccount(web3.eth.accounts[(d + 1) + s], 'pass')
+        #     web3.eth.send_transaction({'to': web3.eth.accounts[(d + 1) + s], 'from': web3.eth.coinbase, 'value': 999999})
         tempCost = Duration.functions.setNode(demandHours[d], demandString[d], '').transact({'from': web3.eth.accounts[(d + 1) + s]})
         demandCost = web3.eth.wait_for_transaction_receipt(tempCost).gasUsed + demandCost
     return demandCost, supplyCost
@@ -199,10 +199,10 @@ def matching(owner, demandHours, supplyHours, demandPrices, steps):
 
         # The following if and for loop performs payment, using the FlexCoin contract.
         if(len(sortedList[t]) > 0):
-            for a in range(0, (len(web3.eth.accounts) - 1)):
-                add, bal = FlexCoin.FlexCoin.caller().getHouse(web3.eth.accounts[a])
-                if bal == 0:
-                    FlexCoin.FlexCoin.transact({'from': web3.eth.accounts[a]}).newHouse()
+            # for a in range(0, (len(web3.eth.accounts) - 1)):
+            #     add, bal = FlexCoin.FlexCoin.caller().getHouse(web3.eth.accounts[a])
+            #     if bal == 0:
+            #         FlexCoin.FlexCoin.transact({'from': web3.eth.accounts[a]}).newHouse()
             tempCost = Duration.functions.checkAndTransfer(sortedList[t], addressFrom[t], addressTo[t], copyDemandPrices[t], t, FlexCoin.address).transact({'from': web3.eth.accounts[0]})
             cost = web3.eth.wait_for_transaction_receipt(tempCost).gasUsed + cost
     return cost

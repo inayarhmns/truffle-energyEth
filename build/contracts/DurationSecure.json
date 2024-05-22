@@ -3191,12 +3191,12 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0xa50a51c09a5c451C52BB714527E1974b686D8e77",
-      "transactionHash": "0x21137d2fc306f167d2c155e60ce52fc5b1b3145fe0e41e03cf4aeb5bb8f5a341"
+      "address": "0xfeae27388A65eE984F452f86efFEd42AaBD438FD",
+      "transactionHash": "0x56f98e4a71435c53c8506f8af8274855200c2b4c561a3117da057dbb90fb4411"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-14T02:47:35.230Z",
+  "updatedAt": "2024-05-22T02:25:59.517Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

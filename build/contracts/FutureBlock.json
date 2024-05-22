@@ -5596,12 +5596,12 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0x9B8397f1B0FEcD3a1a40CdD5E8221Fa461898517",
-      "transactionHash": "0xa5db26b720b731e58494c09ace79e3b750a1b38a31bca7f36d9dadde29ec77df"
+      "address": "0xC9Bc439c8723c5c6fdbBE14E5fF3a1224f8A0f7C",
+      "transactionHash": "0x93579c78bfc7479891537ee52cdf14fae76c4bf2b5522425c4cff2d9b655d65e"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-14T02:47:39.842Z",
+  "updatedAt": "2024-05-22T02:26:04.072Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
