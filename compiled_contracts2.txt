@@ -1,0 +1,143 @@
+Compiling your contracts...
+===========================
+✓ Fetching solc version list from solc-bin. Attempt #1
+✓ Downloading compiler. Attempt #1.
+> Compiling ./contracts/Duration.sol
+> Compiling ./contracts/DurationSecure.sol
+> Compiling ./contracts/FlexCoin.sol
+> Compiling ./contracts/FutureBlock.sol
+> Compiling ./contracts/RealTime.sol
+> Compilation warnings encountered:
+
+    project:/contracts/Duration.sol:32:88: : Unused local variable
+    function checkAndTransfer(uint[] sortedList, uint[] from, uint[] to, uint[] price, uint timeStep, address contractAddress) public returns(bool success) {
+                                                                                       ^-----------^
+,project:/contracts/Duration.sol:32:143: : Unused local variable
+    function checkAndTransfer(uint[] sortedList, uint[] from, uint[] to, uint[] price, uint timeStep, address contractAddress) public returns(bool success) {
+                                                                                                                                              ^----------^
+
+> Artifacts written to /home/inaya_rahmanisa/truffle-energyEth/build/contracts
+> Compiled successfully using:
+   - solc: 0.4.11+commit.68ef5810.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'besuWallet'
+> Network id:      1337
+> Block gas limit: 4700000 (0x47b760)
+
+
+1_duration_migration.js
+=======================
+
+   Replacing 'Duration'
+   --------------------
+   > transaction hash:    0x2fff45cc47a376a7bceffa4b64d91e3567f5c67a6616311a8855caca034b3026
+   > Blocks: 2            Seconds: 4
+   > contract address:    0x42699A7612A82f1d9C36148af9C77354759b210b
+   > block number:        658
+   > block timestamp:     1716453602
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             199.999999999241539
+   > gas used:            758461 (0xb92bd)
+   > gas price:           0.000001 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000000000758461 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000000000758461 ETH
+
+
+2_duration_secure.js
+====================
+
+   Replacing 'DurationSecure'
+   --------------------------
+   > transaction hash:    0xf391ab2db563375e9775e850e5232a75e5ca05ea1bf18f5c0cb03083c9f36c4f
+   > Blocks: 4            Seconds: 8
+   > contract address:    0xa50a51c09a5c451C52BB714527E1974b686D8e77
+   > block number:        662
+   > block timestamp:     1716453610
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             199.999999998511483
+   > gas used:            730056 (0xb23c8)
+   > gas price:           0.000001 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000000000730056 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000000000730056 ETH
+
+
+3_flex_coin.js
+==============
+
+   Replacing 'FlexCoin'
+   --------------------
+   > transaction hash:    0x41dd24318487e3b44b723b15e49a9b6801f0a71ff9057d9443fa8ad872f7a151
+   > Blocks: 4            Seconds: 8
+   > contract address:    0x9a3DBCa554e9f6b9257aAa24010DA8377C57c17e
+   > block number:        666
+   > block timestamp:     1716453618
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             199.999999998175775
+   > gas used:            335708 (0x51f5c)
+   > gas price:           0.000001 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000000000335708 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000000000335708 ETH
+
+
+4_future_block.js
+=================
+
+   Replacing 'FutureBlock'
+   -----------------------
+   > transaction hash:    0x3f4f1550dff1693bb9a703c84ae34819d8382fc50fb616bc323fa4799110a383
+   > Blocks: 2            Seconds: 4
+   > contract address:    0x9B8397f1B0FEcD3a1a40CdD5E8221Fa461898517
+   > block number:        670
+   > block timestamp:     1716453626
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             199.999999997195599
+   > gas used:            980176 (0xef4d0)
+   > gas price:           0.000001 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000000000980176 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000000000980176 ETH
+
+
+5_real_time.js
+==============
+
+   Replacing 'RealTime'
+   --------------------
+   > transaction hash:    0x63b23e31b486d62929207fcfad6c9f6cf8c6de420e8b6d89819bd9d8abc68aa0
+   > Blocks: 4            Seconds: 8
+   > contract address:    0x2E1f232a9439C3D459FcEca0BeEf13acc8259Dd8
+   > block number:        674
+   > block timestamp:     1716453634
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             199.999999996439789
+   > gas used:            755810 (0xb8862)
+   > gas price:           0.000001 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000000075581 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00000000075581 ETH
+
+Summary
+=======
+> Total deployments:   5
+> Final cost:          0.000000003560211 ETH

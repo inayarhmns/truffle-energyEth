@@ -16,7 +16,7 @@ abi = values['abi']
 address = input("What is the contract address? - FlexCoin: ")
 FlexCoin = web3.eth.contract(address, abi=abi)
 
-numHouses = FlexCoin.caller().numHouses()
+numHouses = FlexCoin.functions.numHouses()
 
 print("Accounts:", str(web3.eth.accounts))
 print("numHouses:", str(numHouses))
